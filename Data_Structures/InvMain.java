@@ -31,7 +31,7 @@ public class InvMain {
        // myInventory.sortStocksByBrand();
        // System.out.println(myInventory.getInventory()); 
 
-       System.out.println(myInventory.searchStockByEntrNo(2));
+       //System.out.println(myInventory.searchStockByEntrNo(2));
 
     }
 }
