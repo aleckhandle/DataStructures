@@ -13,12 +13,21 @@ public class Inventory {
         inventory = new ArrayList<>(); // Initialize the ArrayList named "inventory"
     }
 
-
-
-    // Add Stock to Inventory [From flowchart]
-    public void addStock(Stock newStock) {
-        inventory.add(newStock); 
+    // Add Stock to Inventory
+    public boolean addStock(Stock newStock) {
+        // Check for duplicate EntrNo
+        for (Stock stock : inventory) {
+            if (stock.EntrNo == newStock.EntrNo) {
+                System.out.println("\n Stock item with EntrNo " + newStock.EntrNo + " already exists. \n");
+                return false; // Return false if duplicate is found
+            }
+        }
+        inventory.add(newStock); // Add the new stock if no duplicate is found
+        System.out.println("\n Stock item with EntrNo " + newStock.EntrNo + " was added successfully. \n");
+        return true; // Return true if addition is successful
     }
+
+
 
 
 
@@ -36,7 +45,10 @@ public class Inventory {
 
 
 
-    // Method to sort stocks by brand using insertion sort
+
+
+
+    // Method to sort stocks by brand using Insertion Sort
     public void sortStocksByBrand() {
         System.err.println("\nStocks are sorted by Brand\n");
         for (int i = 1; i < inventory.size(); i++) {
@@ -50,16 +62,21 @@ public class Inventory {
         }
     }
 
-    //Linear Search wit EntryNumber
+
+
+
+    
+    // Linear Search with EntryNumber
     public Stock searchStockByEntrNo(int entrNo) {
         for (Stock stock : inventory) {
             if (stock.EntrNo == entrNo) {
+                System.out.println("\n Stock item with EntrNo " + entrNo + " was found. \n");
                 return stock; // Return the stock item if found
             }
         }
+        System.out.println("\n Stock item with EntrNo " + entrNo + " was not found. \n");
         return null; // Return null if the stock item was not found
     }
-
     
     //----get n set is used to access the private variable inventory (medyo nagegets ko na get/set)----
 

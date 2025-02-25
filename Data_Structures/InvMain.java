@@ -25,8 +25,8 @@ public class InvMain {
 
         //System.out.println(myInventory.getInventory()); //getInventory() to READ the inventory list
 
-       // myInventory.deleteStock(1); // Remove stock item from inventory
-        //System.out.println(myInventory.getInventory()); //getInventory() to READ the inventory list
+        myInventory.deleteStock(1); // Remove stock item from inventory
+        System.out.println(myInventory.getInventory()); //getInventory() to READ the inventory list
 
        // myInventory.sortStocksByBrand();
        // System.out.println(myInventory.getInventory()); 
